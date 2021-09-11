@@ -5,26 +5,29 @@ import java.util.Random;
 public class Main {
 
     public static boolean ShouldWeGoAgain (int x) {
+        boolean goAgain = false;
         if (x == 2) {
             System.out.print("Too many tries, do you want to try again? (y/n): ");
-            return ShouldWeGoAgainInput();
+            goAgain = ShouldWeGoAgainInput();
         } else if (x > 2) {
             System.out.print("Do you want to go again? (y/n): ");
-            return ShouldWeGoAgainInput();
+            goAgain = ShouldWeGoAgainInput();
         }
-        return false;
+        return goAgain;
     }
 
     public static boolean ShouldWeGoAgainInput () {
+        boolean goAgain;
         Scanner scanner = new Scanner(System.in);
         String startAgain = scanner.next();
         if (startAgain .equalsIgnoreCase("y")) {
             System.out.println("\nHere we go gain!\n");
-            return true;
+            goAgain = true;
         } else {
             System.out.println("\nThanks for playing!");
-            return false;
+            goAgain = false;
         }
+        return goAgain;
     }
 
     public static void main(String[] args) {
