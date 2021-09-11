@@ -6,10 +6,10 @@ public class Main {
 
     public static boolean ShouldWeGoAgain (int x) {
         if (x == 2) {
-            System.out.println("Too many tries, do you want to try again? (y/n)");
+            System.out.print("Too many tries, do you want to try again? (y/n): ");
             return ShouldWeGoAgainInput();
         } else if (x > 2) {
-            System.out.println("Do you want to go again? (y/n)");
+            System.out.print("Do you want to go again? (y/n): ");
             return ShouldWeGoAgainInput();
         }
         return false;
@@ -19,10 +19,10 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         String startAgain = scanner.next();
         if (startAgain .equalsIgnoreCase("y")) {
-            System.out.println("Here we go gain!\n");
+            System.out.println("\nHere we go gain!\n");
             return true;
         } else {
-            System.out.println("Thanks for playing!");
+            System.out.println("\nThanks for playing!");
             return false;
         }
     }
@@ -48,13 +48,13 @@ public class Main {
                     int guess = scanner.nextInt();
                     System.out.println("Your guess is: " + guess);
                     if (number > guess) {
-                        System.out.println("Your guess was too low");
+                        System.out.println("Your guess was too low\n");
                         counter++;
                     } else if (number < guess) {
-                        System.out.println("Your guess was too high");
+                        System.out.println("Your guess was too high\n");
                         counter++;
                     } else if (number == guess) {
-                        System.out.println("Spot on! nice guess!");
+                        System.out.println("Spot on! nice guess!\n");
                         counter = 5;
                         startOver = ShouldWeGoAgain(counter);
                     }
